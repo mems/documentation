@@ -815,6 +815,24 @@
           "type": "string"
         }
       },
+      "MicrosoftTeamsWorkflowsWebhookHandleIDPathParameter": {
+        "description": "Your Workflows webhook handle id.",
+        "in": "path",
+        "name": "handle_id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "MicrosoftTeamsWorkflowsWebhookHandleNameQueryParameter": {
+        "description": "Your Workflows webhook handle name.",
+        "in": "query",
+        "name": "name",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
       "OpsgenieServiceIDPathParameter": {
         "description": "The UUID of the service.",
         "in": "path",
@@ -122924,6 +122942,65 @@
         ],
         "type": "object"
       },
+      "MicrosoftTeamsCreateWorkflowsWebhookHandleRequest": {
+        "description": "Create Workflows webhook handle request.",
+        "properties": {
+          "data": {
+            "description": "Workflows Webhook handle data from a response.",
+            "properties": {
+              "attributes": {
+                "description": "Workflows Webhook handle attributes.",
+                "properties": {
+                  "name": {
+                    "description": "Workflows Webhook handle name.",
+                    "example": "fake-handle-name",
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "url": {
+                    "description": "Workflows Webhook URL.",
+                    "example": "https://fake.url.com",
+                    "maxLength": 255,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name",
+                  "url"
+                ],
+                "type": "object",
+                "x-merge-override": {
+                  "required": false
+                }
+              },
+              "type": {
+                "default": "workflows-webhook-handle",
+                "description": "Specifies the Workflows webhook handle resource type.",
+                "enum": [
+                  "workflows-webhook-handle"
+                ],
+                "example": "workflows-webhook-handle",
+                "type": "string",
+                "x-enum-varnames": [
+                  "WORKFLOWS_WEBHOOK_HANDLE"
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "attributes"
+            ],
+            "type": "object",
+            "x-merge-override": {
+              "required": false
+            }
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
       "MicrosoftTeamsGetChannelByNameResponse": {
         "description": "Response with channel, team, and tenant ID information.",
         "properties": {
@@ -123646,6 +123723,397 @@
           "type",
           "attributes"
         ],
+        "type": "object",
+        "x-merge-override": {
+          "required": false
+        }
+      },
+      "MicrosoftTeamsUpdateWorkflowsWebhookHandleRequest": {
+        "description": "Update Workflows webhook handle request.",
+        "properties": {
+          "data": {
+            "description": "Workflows Webhook handle data from a response.",
+            "properties": {
+              "attributes": {
+                "description": "Workflows Webhook handle attributes.",
+                "properties": {
+                  "name": {
+                    "description": "Workflows Webhook handle name.",
+                    "example": "fake-handle-name",
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "url": {
+                    "description": "Workflows Webhook URL.",
+                    "example": "https://fake.url.com",
+                    "maxLength": 255,
+                    "type": "string"
+                  }
+                },
+                "type": "object",
+                "x-merge-override": {
+                  "required": false
+                }
+              },
+              "type": {
+                "default": "workflows-webhook-handle",
+                "description": "Specifies the Workflows webhook handle resource type.",
+                "enum": [
+                  "workflows-webhook-handle"
+                ],
+                "example": "workflows-webhook-handle",
+                "type": "string",
+                "x-enum-varnames": [
+                  "WORKFLOWS_WEBHOOK_HANDLE"
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "attributes"
+            ],
+            "type": "object",
+            "x-merge-override": {
+              "required": false
+            }
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "MicrosoftTeamsUpdateWorkflowsWebhookHandleRequestData": {
+        "description": "Workflows Webhook handle data from a response.",
+        "properties": {
+          "attributes": {
+            "description": "Workflows Webhook handle attributes.",
+            "properties": {
+              "name": {
+                "description": "Workflows Webhook handle name.",
+                "example": "fake-handle-name",
+                "maxLength": 255,
+                "type": "string"
+              },
+              "url": {
+                "description": "Workflows Webhook URL.",
+                "example": "https://fake.url.com",
+                "maxLength": 255,
+                "type": "string"
+              }
+            },
+            "type": "object",
+            "x-merge-override": {
+              "required": false
+            }
+          },
+          "type": {
+            "default": "workflows-webhook-handle",
+            "description": "Specifies the Workflows webhook handle resource type.",
+            "enum": [
+              "workflows-webhook-handle"
+            ],
+            "example": "workflows-webhook-handle",
+            "type": "string",
+            "x-enum-varnames": [
+              "WORKFLOWS_WEBHOOK_HANDLE"
+            ]
+          }
+        },
+        "required": [
+          "type",
+          "attributes"
+        ],
+        "type": "object",
+        "x-merge-override": {
+          "required": false
+        }
+      },
+      "MicrosoftTeamsWorkflowsWebhookHandleAttributes": {
+        "description": "Workflows Webhook handle attributes.",
+        "properties": {
+          "name": {
+            "description": "Workflows Webhook handle name.",
+            "example": "fake-handle-name",
+            "maxLength": 255,
+            "type": "string"
+          },
+          "url": {
+            "description": "Workflows Webhook URL.",
+            "example": "https://fake.url.com",
+            "maxLength": 255,
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "x-merge-override": {
+          "required": false
+        }
+      },
+      "MicrosoftTeamsWorkflowsWebhookHandleRequestAttributes": {
+        "description": "Workflows Webhook handle attributes.",
+        "properties": {
+          "name": {
+            "description": "Workflows Webhook handle name.",
+            "example": "fake-handle-name",
+            "maxLength": 255,
+            "type": "string"
+          },
+          "url": {
+            "description": "Workflows Webhook URL.",
+            "example": "https://fake.url.com",
+            "maxLength": 255,
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "url"
+        ],
+        "type": "object",
+        "x-merge-override": {
+          "required": false
+        }
+      },
+      "MicrosoftTeamsWorkflowsWebhookHandleRequestData": {
+        "description": "Workflows Webhook handle data from a response.",
+        "properties": {
+          "attributes": {
+            "description": "Workflows Webhook handle attributes.",
+            "properties": {
+              "name": {
+                "description": "Workflows Webhook handle name.",
+                "example": "fake-handle-name",
+                "maxLength": 255,
+                "type": "string"
+              },
+              "url": {
+                "description": "Workflows Webhook URL.",
+                "example": "https://fake.url.com",
+                "maxLength": 255,
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "url"
+            ],
+            "type": "object",
+            "x-merge-override": {
+              "required": false
+            }
+          },
+          "type": {
+            "default": "workflows-webhook-handle",
+            "description": "Specifies the Workflows webhook handle resource type.",
+            "enum": [
+              "workflows-webhook-handle"
+            ],
+            "example": "workflows-webhook-handle",
+            "type": "string",
+            "x-enum-varnames": [
+              "WORKFLOWS_WEBHOOK_HANDLE"
+            ]
+          }
+        },
+        "required": [
+          "type",
+          "attributes"
+        ],
+        "type": "object",
+        "x-merge-override": {
+          "required": false
+        }
+      },
+      "MicrosoftTeamsWorkflowsWebhookHandleResponse": {
+        "description": "Response of a Workflows webhook handle.",
+        "properties": {
+          "data": {
+            "description": "Workflows Webhook handle data from a response.",
+            "properties": {
+              "attributes": {
+                "description": "Workflows Webhook handle attributes.",
+                "properties": {
+                  "name": {
+                    "description": "Workflows Webhook handle name.",
+                    "example": "fake-handle-name",
+                    "maxLength": 255,
+                    "type": "string"
+                  }
+                },
+                "type": "object",
+                "x-merge-override": {
+                  "required": false
+                }
+              },
+              "id": {
+                "description": "The ID of the Workflows webhook handle.",
+                "example": "596da4af-0563-4097-90ff-07230c3f9db3",
+                "maxLength": 100,
+                "minLength": 1,
+                "type": "string"
+              },
+              "type": {
+                "default": "workflows-webhook-handle",
+                "description": "Specifies the Workflows webhook handle resource type.",
+                "enum": [
+                  "workflows-webhook-handle"
+                ],
+                "example": "workflows-webhook-handle",
+                "type": "string",
+                "x-enum-varnames": [
+                  "WORKFLOWS_WEBHOOK_HANDLE"
+                ]
+              }
+            },
+            "type": "object",
+            "x-merge-override": {
+              "required": false
+            }
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "MicrosoftTeamsWorkflowsWebhookHandleResponseData": {
+        "description": "Workflows Webhook handle data from a response.",
+        "properties": {
+          "attributes": {
+            "description": "Workflows Webhook handle attributes.",
+            "properties": {
+              "name": {
+                "description": "Workflows Webhook handle name.",
+                "example": "fake-handle-name",
+                "maxLength": 255,
+                "type": "string"
+              }
+            },
+            "type": "object",
+            "x-merge-override": {
+              "required": false
+            }
+          },
+          "id": {
+            "description": "The ID of the Workflows webhook handle.",
+            "example": "596da4af-0563-4097-90ff-07230c3f9db3",
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": {
+            "default": "workflows-webhook-handle",
+            "description": "Specifies the Workflows webhook handle resource type.",
+            "enum": [
+              "workflows-webhook-handle"
+            ],
+            "example": "workflows-webhook-handle",
+            "type": "string",
+            "x-enum-varnames": [
+              "WORKFLOWS_WEBHOOK_HANDLE"
+            ]
+          }
+        },
+        "type": "object",
+        "x-merge-override": {
+          "required": false
+        }
+      },
+      "MicrosoftTeamsWorkflowsWebhookHandleType": {
+        "default": "workflows-webhook-handle",
+        "description": "Specifies the Workflows webhook handle resource type.",
+        "enum": [
+          "workflows-webhook-handle"
+        ],
+        "example": "workflows-webhook-handle",
+        "type": "string",
+        "x-enum-varnames": [
+          "WORKFLOWS_WEBHOOK_HANDLE"
+        ]
+      },
+      "MicrosoftTeamsWorkflowsWebhookHandlesResponse": {
+        "description": "Response with a list of Workflows webhook handles.",
+        "properties": {
+          "data": {
+            "description": "An array of Workflows webhook handles.",
+            "example": [
+              {
+                "attributes": {
+                  "name": "general-handle"
+                },
+                "id": "596da4af-0563-4097-90ff-07230c3f9db3",
+                "type": "workflows-webhook-handle"
+              },
+              {
+                "attributes": {
+                  "name": "general-handle-2"
+                },
+                "id": "596da4af-0563-4097-90ff-07230c3f9db4",
+                "type": "workflows-webhook-handle"
+              }
+            ],
+            "items": {
+              "description": "Workflows Webhook handle data from a response.",
+              "properties": {
+                "attributes": {
+                  "description": "Workflows Webhook handle attributes.",
+                  "properties": {
+                    "name": {
+                      "description": "Workflows Webhook handle name.",
+                      "example": "fake-handle-name",
+                      "maxLength": 255,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object",
+                  "x-merge-override": {
+                    "required": false
+                  }
+                },
+                "id": {
+                  "description": "The ID of the Workflows webhook handle.",
+                  "example": "596da4af-0563-4097-90ff-07230c3f9db3",
+                  "maxLength": 100,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "type": {
+                  "default": "workflows-webhook-handle",
+                  "description": "Specifies the Workflows webhook handle resource type.",
+                  "enum": [
+                    "workflows-webhook-handle"
+                  ],
+                  "example": "workflows-webhook-handle",
+                  "type": "string",
+                  "x-enum-varnames": [
+                    "WORKFLOWS_WEBHOOK_HANDLE"
+                  ]
+                }
+              },
+              "type": "object",
+              "x-merge-override": {
+                "required": false
+              }
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
+      },
+      "MicrosoftTeamsWorkflowsWebhookResponseAttributes": {
+        "description": "Workflows Webhook handle attributes.",
+        "properties": {
+          "name": {
+            "description": "Workflows Webhook handle name.",
+            "example": "fake-handle-name",
+            "maxLength": 255,
+            "type": "string"
+          }
+        },
         "type": "object",
         "x-merge-override": {
           "required": false
@@ -285629,6 +286097,1270 @@
           }
         },
         "summary": "Update tenant-based handle",
+        "tags": [
+          "Microsoft Teams Integration"
+        ],
+        "x-codegen-request-body-name": "body",
+        "x-menu-order": 1,
+        "x-undo": {
+          "type": "idempotent"
+        }
+      },
+      "x-merge-override": {
+        "delete": true,
+        "get": true,
+        "patch": true
+      }
+    },
+    "/api/v2/integration/ms-teams/configuration/workflows-webhook-handles": {
+      "get": {
+        "description": "Get a list of all Workflows webhook handles from the Datadog Microsoft Teams integration.",
+        "operationId": "ListWorkflowsWebhookHandles",
+        "parameters": [
+          {
+            "description": "Your Workflows webhook handle name.",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Response with a list of Workflows webhook handles.",
+                  "properties": {
+                    "data": {
+                      "description": "An array of Workflows webhook handles.",
+                      "example": [
+                        {
+                          "attributes": {
+                            "name": "general-handle"
+                          },
+                          "id": "596da4af-0563-4097-90ff-07230c3f9db3",
+                          "type": "workflows-webhook-handle"
+                        },
+                        {
+                          "attributes": {
+                            "name": "general-handle-2"
+                          },
+                          "id": "596da4af-0563-4097-90ff-07230c3f9db4",
+                          "type": "workflows-webhook-handle"
+                        }
+                      ],
+                      "items": {
+                        "description": "Workflows Webhook handle data from a response.",
+                        "properties": {
+                          "attributes": {
+                            "description": "Workflows Webhook handle attributes.",
+                            "properties": {
+                              "name": {
+                                "description": "Workflows Webhook handle name.",
+                                "example": "fake-handle-name",
+                                "maxLength": 255,
+                                "type": "string"
+                              }
+                            },
+                            "type": "object",
+                            "x-merge-override": {
+                              "required": false
+                            }
+                          },
+                          "id": {
+                            "description": "The ID of the Workflows webhook handle.",
+                            "example": "596da4af-0563-4097-90ff-07230c3f9db3",
+                            "maxLength": 100,
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "type": {
+                            "default": "workflows-webhook-handle",
+                            "description": "Specifies the Workflows webhook handle resource type.",
+                            "enum": [
+                              "workflows-webhook-handle"
+                            ],
+                            "example": "workflows-webhook-handle",
+                            "type": "string",
+                            "x-enum-varnames": [
+                              "WORKFLOWS_WEBHOOK_HANDLE"
+                            ]
+                          }
+                        },
+                        "type": "object",
+                        "x-merge-override": {
+                          "required": false
+                        }
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "data"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "API error response.",
+                  "properties": {
+                    "errors": {
+                      "description": "A list of errors.",
+                      "example": [
+                        "Bad Request"
+                      ],
+                      "items": {
+                        "description": "A list of items.",
+                        "example": "Bad Request",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "API error response.",
+                  "properties": {
+                    "errors": {
+                      "description": "A list of errors.",
+                      "example": [
+                        "Bad Request"
+                      ],
+                      "items": {
+                        "description": "A list of items.",
+                        "example": "Bad Request",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "API error response.",
+                  "properties": {
+                    "errors": {
+                      "description": "A list of errors.",
+                      "example": [
+                        "Bad Request"
+                      ],
+                      "items": {
+                        "description": "A list of items.",
+                        "example": "Bad Request",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "412": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "API error response.",
+                  "properties": {
+                    "errors": {
+                      "description": "A list of errors.",
+                      "example": [
+                        "Bad Request"
+                      ],
+                      "items": {
+                        "description": "A list of items.",
+                        "example": "Bad Request",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Failed Precondition"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "API error response.",
+                  "properties": {
+                    "errors": {
+                      "description": "A list of errors.",
+                      "example": [
+                        "Bad Request"
+                      ],
+                      "items": {
+                        "description": "A list of items.",
+                        "example": "Bad Request",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Too many requests"
+          }
+        },
+        "summary": "Get all Workflows webhook handles",
+        "tags": [
+          "Microsoft Teams Integration"
+        ],
+        "x-menu-order": 1,
+        "x-undo": {
+          "type": "safe"
+        }
+      },
+      "post": {
+        "description": "Create a Workflows webhook handle in the Datadog Microsoft Teams integration.",
+        "operationId": "CreateWorkflowsWebhookHandle",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "Create Workflows webhook handle request.",
+                "properties": {
+                  "data": {
+                    "description": "Workflows Webhook handle data from a response.",
+                    "properties": {
+                      "attributes": {
+                        "description": "Workflows Webhook handle attributes.",
+                        "properties": {
+                          "name": {
+                            "description": "Workflows Webhook handle name.",
+                            "example": "fake-handle-name",
+                            "maxLength": 255,
+                            "type": "string"
+                          },
+                          "url": {
+                            "description": "Workflows Webhook URL.",
+                            "example": "https://fake.url.com",
+                            "maxLength": 255,
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "url"
+                        ],
+                        "type": "object",
+                        "x-merge-override": {
+                          "required": false
+                        }
+                      },
+                      "type": {
+                        "default": "workflows-webhook-handle",
+                        "description": "Specifies the Workflows webhook handle resource type.",
+                        "enum": [
+                          "workflows-webhook-handle"
+                        ],
+                        "example": "workflows-webhook-handle",
+                        "type": "string",
+                        "x-enum-varnames": [
+                          "WORKFLOWS_WEBHOOK_HANDLE"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "attributes"
+                    ],
+                    "type": "object",
+                    "x-merge-override": {
+                      "required": false
+                    }
+                  }
+                },
+                "required": [
+                  "data"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "description": "Workflows Webhook handle payload.",
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Response of a Workflows webhook handle.",
+                  "properties": {
+                    "data": {
+                      "description": "Workflows Webhook handle data from a response.",
+                      "properties": {
+                        "attributes": {
+                          "description": "Workflows Webhook handle attributes.",
+                          "properties": {
+                            "name": {
+                              "description": "Workflows Webhook handle name.",
+                              "example": "fake-handle-name",
+                              "maxLength": 255,
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "x-merge-override": {
+                            "required": false
+                          }
+                        },
+                        "id": {
+                          "description": "The ID of the Workflows webhook handle.",
+                          "example": "596da4af-0563-4097-90ff-07230c3f9db3",
+                          "maxLength": 100,
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "type": {
+                          "default": "workflows-webhook-handle",
+                          "description": "Specifies the Workflows webhook handle resource type.",
+                          "enum": [
+                            "workflows-webhook-handle"
+                          ],
+                          "example": "workflows-webhook-handle",
+                          "type": "string",
+                          "x-enum-varnames": [
+                            "WORKFLOWS_WEBHOOK_HANDLE"
+                          ]
+                        }
+                      },
+                      "type": "object",
+                      "x-merge-override": {
+                        "required": false
+                      }
+                    }
+                  },
+                  "required": [
+                    "data"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "CREATED"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "API error response.",
+                  "properties": {
+                    "errors": {
+                      "description": "A list of errors.",
+                      "example": [
+                        "Bad Request"
+                      ],
+                      "items": {
+                        "description": "A list of items.",
+                        "example": "Bad Request",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "API error response.",
+                  "properties": {
+                    "errors": {
+                      "description": "A list of errors.",
+                      "example": [
+                        "Bad Request"
+                      ],
+                      "items": {
+                        "description": "A list of items.",
+                        "example": "Bad Request",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "API error response.",
+                  "properties": {
+                    "errors": {
+                      "description": "A list of errors.",
+                      "example": [
+                        "Bad Request"
+                      ],
+                      "items": {
+                        "description": "A list of items.",
+                        "example": "Bad Request",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "API error response.",
+                  "properties": {
+                    "errors": {
+                      "description": "A list of errors.",
+                      "example": [
+                        "Bad Request"
+                      ],
+                      "items": {
+                        "description": "A list of items.",
+                        "example": "Bad Request",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "412": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "API error response.",
+                  "properties": {
+                    "errors": {
+                      "description": "A list of errors.",
+                      "example": [
+                        "Bad Request"
+                      ],
+                      "items": {
+                        "description": "A list of items.",
+                        "example": "Bad Request",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Failed Precondition"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "API error response.",
+                  "properties": {
+                    "errors": {
+                      "description": "A list of errors.",
+                      "example": [
+                        "Bad Request"
+                      ],
+                      "items": {
+                        "description": "A list of items.",
+                        "example": "Bad Request",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Too many requests"
+          }
+        },
+        "summary": "Create Workflows webhook handle",
+        "tags": [
+          "Microsoft Teams Integration"
+        ],
+        "x-codegen-request-body-name": "body",
+        "x-given": {
+          "workflows_webhook_handle": {
+            "parameters": [
+              {
+                "name": "body",
+                "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"url\": \"https://prod-100.westus.logic.azure.com:443/workflows/abcd1234\"\n     },\n     \"type\": \"workflows-webhook-handle\"\n  }\n}"
+              }
+            ],
+            "step": "there is a valid \"workflows_webhook_handle\" in the system"
+          }
+        },
+        "x-menu-order": 1,
+        "x-undo": {
+          "operationId": "DeleteWorkflowsWebhookHandle",
+          "parameters": [
+            {
+              "name": "handle_id",
+              "source": "data.id"
+            }
+          ],
+          "type": "unsafe"
+        }
+      },
+      "x-merge-override": {
+        "get": true,
+        "post": true
+      }
+    },
+    "/api/v2/integration/ms-teams/configuration/workflows-webhook-handles/{handle_id}": {
+      "delete": {
+        "description": "Delete a Workflows webhook handle from the Datadog Microsoft Teams integration.",
+        "operationId": "DeleteWorkflowsWebhookHandle",
+        "parameters": [
+          {
+            "description": "Your Workflows webhook handle id.",
+            "in": "path",
+            "name": "handle_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "API error response.",
+                  "properties": {
+                    "errors": {
+                      "description": "A list of errors.",
+                      "example": [
+                        "Bad Request"
+                      ],
+                      "items": {
+                        "description": "A list of items.",
+                        "example": "Bad Request",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "API error response.",
+                  "properties": {
+                    "errors": {
+                      "description": "A list of errors.",
+                      "example": [
+                        "Bad Request"
+                      ],
+                      "items": {
+                        "description": "A list of items.",
+                        "example": "Bad Request",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "412": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "API error response.",
+                  "properties": {
+                    "errors": {
+                      "description": "A list of errors.",
+                      "example": [
+                        "Bad Request"
+                      ],
+                      "items": {
+                        "description": "A list of items.",
+                        "example": "Bad Request",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Failed Precondition"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "API error response.",
+                  "properties": {
+                    "errors": {
+                      "description": "A list of errors.",
+                      "example": [
+                        "Bad Request"
+                      ],
+                      "items": {
+                        "description": "A list of items.",
+                        "example": "Bad Request",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Too many requests"
+          }
+        },
+        "summary": "Delete Workflows webhook handle",
+        "tags": [
+          "Microsoft Teams Integration"
+        ],
+        "x-menu-order": 1,
+        "x-undo": {
+          "type": "idempotent"
+        }
+      },
+      "get": {
+        "description": "Get the name of a Workflows webhook handle from the Datadog Microsoft Teams integration.",
+        "operationId": "GetWorkflowsWebhookHandle",
+        "parameters": [
+          {
+            "description": "Your Workflows webhook handle id.",
+            "in": "path",
+            "name": "handle_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Response of a Workflows webhook handle.",
+                  "properties": {
+                    "data": {
+                      "description": "Workflows Webhook handle data from a response.",
+                      "properties": {
+                        "attributes": {
+                          "description": "Workflows Webhook handle attributes.",
+                          "properties": {
+                            "name": {
+                              "description": "Workflows Webhook handle name.",
+                              "example": "fake-handle-name",
+                              "maxLength": 255,
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "x-merge-override": {
+                            "required": false
+                          }
+                        },
+                        "id": {
+                          "description": "The ID of the Workflows webhook handle.",
+                          "example": "596da4af-0563-4097-90ff-07230c3f9db3",
+                          "maxLength": 100,
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "type": {
+                          "default": "workflows-webhook-handle",
+                          "description": "Specifies the Workflows webhook handle resource type.",
+                          "enum": [
+                            "workflows-webhook-handle"
+                          ],
+                          "example": "workflows-webhook-handle",
+                          "type": "string",
+                          "x-enum-varnames": [
+                            "WORKFLOWS_WEBHOOK_HANDLE"
+                          ]
+                        }
+                      },
+                      "type": "object",
+                      "x-merge-override": {
+                        "required": false
+                      }
+                    }
+                  },
+                  "required": [
+                    "data"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "API error response.",
+                  "properties": {
+                    "errors": {
+                      "description": "A list of errors.",
+                      "example": [
+                        "Bad Request"
+                      ],
+                      "items": {
+                        "description": "A list of items.",
+                        "example": "Bad Request",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "API error response.",
+                  "properties": {
+                    "errors": {
+                      "description": "A list of errors.",
+                      "example": [
+                        "Bad Request"
+                      ],
+                      "items": {
+                        "description": "A list of items.",
+                        "example": "Bad Request",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "API error response.",
+                  "properties": {
+                    "errors": {
+                      "description": "A list of errors.",
+                      "example": [
+                        "Bad Request"
+                      ],
+                      "items": {
+                        "description": "A list of items.",
+                        "example": "Bad Request",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "412": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "API error response.",
+                  "properties": {
+                    "errors": {
+                      "description": "A list of errors.",
+                      "example": [
+                        "Bad Request"
+                      ],
+                      "items": {
+                        "description": "A list of items.",
+                        "example": "Bad Request",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Failed Precondition"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "API error response.",
+                  "properties": {
+                    "errors": {
+                      "description": "A list of errors.",
+                      "example": [
+                        "Bad Request"
+                      ],
+                      "items": {
+                        "description": "A list of items.",
+                        "example": "Bad Request",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Too many requests"
+          }
+        },
+        "summary": "Get Workflows webhook handle information",
+        "tags": [
+          "Microsoft Teams Integration"
+        ],
+        "x-menu-order": 1,
+        "x-undo": {
+          "type": "safe"
+        }
+      },
+      "patch": {
+        "description": "Update a Workflows webhook handle from the Datadog Microsoft Teams integration.",
+        "operationId": "UpdateWorkflowsWebhookHandle",
+        "parameters": [
+          {
+            "description": "Your Workflows webhook handle id.",
+            "in": "path",
+            "name": "handle_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "Update Workflows webhook handle request.",
+                "properties": {
+                  "data": {
+                    "description": "Workflows Webhook handle data from a response.",
+                    "properties": {
+                      "attributes": {
+                        "description": "Workflows Webhook handle attributes.",
+                        "properties": {
+                          "name": {
+                            "description": "Workflows Webhook handle name.",
+                            "example": "fake-handle-name",
+                            "maxLength": 255,
+                            "type": "string"
+                          },
+                          "url": {
+                            "description": "Workflows Webhook URL.",
+                            "example": "https://fake.url.com",
+                            "maxLength": 255,
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "x-merge-override": {
+                          "required": false
+                        }
+                      },
+                      "type": {
+                        "default": "workflows-webhook-handle",
+                        "description": "Specifies the Workflows webhook handle resource type.",
+                        "enum": [
+                          "workflows-webhook-handle"
+                        ],
+                        "example": "workflows-webhook-handle",
+                        "type": "string",
+                        "x-enum-varnames": [
+                          "WORKFLOWS_WEBHOOK_HANDLE"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "attributes"
+                    ],
+                    "type": "object",
+                    "x-merge-override": {
+                      "required": false
+                    }
+                  }
+                },
+                "required": [
+                  "data"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "description": "Workflows Webhook handle payload.",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Response of a Workflows webhook handle.",
+                  "properties": {
+                    "data": {
+                      "description": "Workflows Webhook handle data from a response.",
+                      "properties": {
+                        "attributes": {
+                          "description": "Workflows Webhook handle attributes.",
+                          "properties": {
+                            "name": {
+                              "description": "Workflows Webhook handle name.",
+                              "example": "fake-handle-name",
+                              "maxLength": 255,
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "x-merge-override": {
+                            "required": false
+                          }
+                        },
+                        "id": {
+                          "description": "The ID of the Workflows webhook handle.",
+                          "example": "596da4af-0563-4097-90ff-07230c3f9db3",
+                          "maxLength": 100,
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "type": {
+                          "default": "workflows-webhook-handle",
+                          "description": "Specifies the Workflows webhook handle resource type.",
+                          "enum": [
+                            "workflows-webhook-handle"
+                          ],
+                          "example": "workflows-webhook-handle",
+                          "type": "string",
+                          "x-enum-varnames": [
+                            "WORKFLOWS_WEBHOOK_HANDLE"
+                          ]
+                        }
+                      },
+                      "type": "object",
+                      "x-merge-override": {
+                        "required": false
+                      }
+                    }
+                  },
+                  "required": [
+                    "data"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "API error response.",
+                  "properties": {
+                    "errors": {
+                      "description": "A list of errors.",
+                      "example": [
+                        "Bad Request"
+                      ],
+                      "items": {
+                        "description": "A list of items.",
+                        "example": "Bad Request",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "API error response.",
+                  "properties": {
+                    "errors": {
+                      "description": "A list of errors.",
+                      "example": [
+                        "Bad Request"
+                      ],
+                      "items": {
+                        "description": "A list of items.",
+                        "example": "Bad Request",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "API error response.",
+                  "properties": {
+                    "errors": {
+                      "description": "A list of errors.",
+                      "example": [
+                        "Bad Request"
+                      ],
+                      "items": {
+                        "description": "A list of items.",
+                        "example": "Bad Request",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "API error response.",
+                  "properties": {
+                    "errors": {
+                      "description": "A list of errors.",
+                      "example": [
+                        "Bad Request"
+                      ],
+                      "items": {
+                        "description": "A list of items.",
+                        "example": "Bad Request",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "412": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "API error response.",
+                  "properties": {
+                    "errors": {
+                      "description": "A list of errors.",
+                      "example": [
+                        "Bad Request"
+                      ],
+                      "items": {
+                        "description": "A list of items.",
+                        "example": "Bad Request",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Failed Precondition"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "API error response.",
+                  "properties": {
+                    "errors": {
+                      "description": "A list of errors.",
+                      "example": [
+                        "Bad Request"
+                      ],
+                      "items": {
+                        "description": "A list of items.",
+                        "example": "Bad Request",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Too many requests"
+          }
+        },
+        "summary": "Update Workflows webhook handle",
         "tags": [
           "Microsoft Teams Integration"
         ],
