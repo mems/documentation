@@ -32397,7 +32397,7 @@
             "type": "object"
           },
           "changed_resource": {
-            "description": "Object representing a uniquely identified resource. Only the resource type `feature_flag` is supported.",
+            "description": "Object representing a uniquely identified resource.",
             "properties": {
               "name": {
                 "description": "Resource's name.",
@@ -32407,12 +32407,14 @@
               "type": {
                 "description": "Resource's type.",
                 "enum": [
-                  "feature_flag"
+                  "feature_flag",
+                  "configuration"
                 ],
                 "example": "feature_flag",
                 "type": "string",
                 "x-enum-varnames": [
-                  "FEATURE_FLAG"
+                  "FEATURE_FLAG",
+                  "CONFIGURATION"
                 ]
               }
             },
@@ -32531,7 +32533,7 @@
         ]
       },
       "ChangeEventCustomAttributesChangedResource": {
-        "description": "Object representing a uniquely identified resource. Only the resource type `feature_flag` is supported.",
+        "description": "Object representing a uniquely identified resource.",
         "properties": {
           "name": {
             "description": "Resource's name.",
@@ -32541,12 +32543,14 @@
           "type": {
             "description": "Resource's type.",
             "enum": [
-              "feature_flag"
+              "feature_flag",
+              "configuration"
             ],
             "example": "feature_flag",
             "type": "string",
             "x-enum-varnames": [
-              "FEATURE_FLAG"
+              "FEATURE_FLAG",
+              "CONFIGURATION"
             ]
           }
         },
@@ -32559,12 +32563,14 @@
       "ChangeEventCustomAttributesChangedResourceType": {
         "description": "Resource's type.",
         "enum": [
-          "feature_flag"
+          "feature_flag",
+          "configuration"
         ],
         "example": "feature_flag",
         "type": "string",
         "x-enum-varnames": [
-          "FEATURE_FLAG"
+          "FEATURE_FLAG",
+          "CONFIGURATION"
         ]
       },
       "ChangeEventCustomAttributesImpactedResourcesItems": {
@@ -63497,7 +63503,7 @@
                         "type": "object"
                       },
                       "changed_resource": {
-                        "description": "Object representing a uniquely identified resource. Only the resource type `feature_flag` is supported.",
+                        "description": "Object representing a uniquely identified resource.",
                         "properties": {
                           "name": {
                             "description": "Resource's name.",
@@ -63507,12 +63513,14 @@
                           "type": {
                             "description": "Resource's type.",
                             "enum": [
-                              "feature_flag"
+                              "feature_flag",
+                              "configuration"
                             ],
                             "example": "feature_flag",
                             "type": "string",
                             "x-enum-varnames": [
-                              "FEATURE_FLAG"
+                              "FEATURE_FLAG",
+                              "CONFIGURATION"
                             ]
                           }
                         },
@@ -63714,7 +63722,7 @@
                             "type": "object"
                           },
                           "changed_resource": {
-                            "description": "Object representing a uniquely identified resource. Only the resource type `feature_flag` is supported.",
+                            "description": "Object representing a uniquely identified resource.",
                             "properties": {
                               "name": {
                                 "description": "Resource's name.",
@@ -63724,12 +63732,14 @@
                               "type": {
                                 "description": "Resource's type.",
                                 "enum": [
-                                  "feature_flag"
+                                  "feature_flag",
+                                  "configuration"
                                 ],
                                 "example": "feature_flag",
                                 "type": "string",
                                 "x-enum-varnames": [
-                                  "FEATURE_FLAG"
+                                  "FEATURE_FLAG",
+                                  "CONFIGURATION"
                                 ]
                               }
                             },
@@ -64059,7 +64069,7 @@
                     "type": "object"
                   },
                   "changed_resource": {
-                    "description": "Object representing a uniquely identified resource. Only the resource type `feature_flag` is supported.",
+                    "description": "Object representing a uniquely identified resource.",
                     "properties": {
                       "name": {
                         "description": "Resource's name.",
@@ -64069,12 +64079,14 @@
                       "type": {
                         "description": "Resource's type.",
                         "enum": [
-                          "feature_flag"
+                          "feature_flag",
+                          "configuration"
                         ],
                         "example": "feature_flag",
                         "type": "string",
                         "x-enum-varnames": [
-                          "FEATURE_FLAG"
+                          "FEATURE_FLAG",
+                          "CONFIGURATION"
                         ]
                       }
                     },
@@ -64248,7 +64260,7 @@
                 "type": "object"
               },
               "changed_resource": {
-                "description": "Object representing a uniquely identified resource. Only the resource type `feature_flag` is supported.",
+                "description": "Object representing a uniquely identified resource.",
                 "properties": {
                   "name": {
                     "description": "Resource's name.",
@@ -64258,12 +64270,14 @@
                   "type": {
                     "description": "Resource's type.",
                     "enum": [
-                      "feature_flag"
+                      "feature_flag",
+                      "configuration"
                     ],
                     "example": "feature_flag",
                     "type": "string",
                     "x-enum-varnames": [
-                      "FEATURE_FLAG"
+                      "FEATURE_FLAG",
+                      "CONFIGURATION"
                     ]
                   }
                 },
@@ -261008,7 +261022,7 @@
                                     "type": "object"
                                   },
                                   "changed_resource": {
-                                    "description": "Object representing a uniquely identified resource. Only the resource type `feature_flag` is supported.",
+                                    "description": "Object representing a uniquely identified resource.",
                                     "properties": {
                                       "name": {
                                         "description": "Resource's name.",
@@ -261018,12 +261032,14 @@
                                       "type": {
                                         "description": "Resource's type.",
                                         "enum": [
-                                          "feature_flag"
+                                          "feature_flag",
+                                          "configuration"
                                         ],
                                         "example": "feature_flag",
                                         "type": "string",
                                         "x-enum-varnames": [
-                                          "FEATURE_FLAG"
+                                          "FEATURE_FLAG",
+                                          "CONFIGURATION"
                                         ]
                                       }
                                     },
